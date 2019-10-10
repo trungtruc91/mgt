@@ -1,0 +1,66 @@
+<?php
+/**
+ * @var Tructt\HelloWorld\Block\Display $block
+ */
+$collection = $block->loadAllArticles();
+$datas = $collection->getData();
+?>
+
+<table class="data table" id="test-data-table">
+    <thead>
+    <tr>
+        <th scope="col" class="col title">ID</th>
+        <th scope="col" class="col author">Title</th>
+        <th scope="col" class="col content">Content</th>
+        <th scope="col" class="col actions">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($datas as $key => $data): ?>
+        <?php
+        $id = $data['article_id'];
+        echo '<tr>
+                    <td>' . $data['article_id'] . '</td>
+                    <td>' . $data['title'] . '</td>
+                    <td>' . $data['content'] . '</td>
+                    <td><a href="/helloworld/index/detail?id=' . $id . '">Detail</a></td>
+                  </tr>';
+        ?>
+
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .post-id {
+        width: 2%
+    }
+
+    .post-name {
+        width: 30%
+    }
+
+    #test-data-table td, #test-data-table th {
+        text-align: center;
+    }
+</style>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tructt_HelloWorld::helloworld"
+             title="Hello World"
+             module="Tructt_HelloWorld"
+             sortOrder="51"
+             resource="Tructt_HelloWorld::helloworld"/>
+        <add id="Tructt_HelloWorld::post"
+             title="Manage Posts"
+             module="Tructt_HelloWorld"
+             sortOrder="10"
+             action="mageplaza_helloworld/post"
+             resource="Tructt_HelloWorld::post"
+             parent="Tructt_HelloWorld::helloworld"/>
+        <add id="Tructt_HelloWorld::hello_configuration"
+             title="Configuration"
+             module="Tructt_HelloWorld"
+             sortOrder="99"
+             parent="Tructt_HelloWorld::helloworld"
+             action="adminhtml/system_config/edit/section/helloworld"
+             resource="Tructt_HelloWorld::helloworld_configuration"/>
+    </menu>
+</config>

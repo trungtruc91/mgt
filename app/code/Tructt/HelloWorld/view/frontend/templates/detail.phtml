@@ -1,0 +1,64 @@
+<?php
+/**
+ * @var Tructt\HelloWorld\Block\Detail $block
+ */
+$datas = $block->getDatas()[0];
+
+?>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .post-id {
+        width: 2%
+    }
+
+    .post-name {
+        width: 30%
+    }
+
+</style>
+
+<table>
+    <tr>
+        <th class="post-id">Id</th>
+        <th class="post-name">Title</th>
+        <th class="post-name">Content</th>
+        <th class="post-name" width="10%">Image</th>
+        <th class="post-name">Create At</th>
+        <th class="post-name">Update At</th>
+    </tr>
+    <?php
+    $id = $datas['article_id'];
+    $title = $datas['title'];
+    $content = $datas['content'];
+    $Image = $datas['Image'];
+    $created_at = $datas['created_at'];
+    $updated_at = $datas['updated_at'];
+    ?>
+    <tr>
+        <td><?= $id ?></td>
+        <td><?= $title ?></td>
+        <td><?= $content ?></td>
+        <td width="10%"><?= $Image ?></td>
+        <td><?= $created_at ?></td>
+        <td><?= $updated_at ?></td>
+    </tr>
+</table>
+
+
